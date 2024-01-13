@@ -1,4 +1,3 @@
-blank
 acid
 bludgeoning
 cold

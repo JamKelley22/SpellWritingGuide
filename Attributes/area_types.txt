@@ -1,4 +1,3 @@
-Blank
 Cube
 Line
 Multiple-Targets

@@ -1,4 +1,3 @@
-blank
 10-feet radius
 100-feet line
 15-feet cone

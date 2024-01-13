@@ -1,4 +1,3 @@
-blank
 Conjuration
 Necromancy
 Evocation
