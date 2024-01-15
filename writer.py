@@ -5,6 +5,7 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 from tqdm.auto import tqdm
+from pathlib import Path
 
 import bases
 import line_shapes
@@ -334,21 +335,44 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    Path("spells").mkdir(parents=True, exist_ok=True)
+
+    spell = {
+        "level": "3",
+        "rang": "point (150 feet)",
+        "area": "sphere",
+        "damage_type": "fire",
+        "school": "evocation",
+        "output": "spells/fireball_classic_1.png",
+    }
+
+    # Fireball
     draw_spell(
-        level=args.level,
-        rang=args.range,
-        area=args.area,
-        damage_type=args.damage_type,
-        school=args.school,
-        title=args.title,
+        **spell,
         legend=args.legend,
         base_fn=base_fn_mapping[args.base],
         shape_fn=line_shape_fn_mapping[args.line_shape],
         breakdown=args.breakdown,
-        output=args.output,
         hide_points=args.hide_points,
         hide_dotted=args.hide_dotted,
     )
+
+    # draw_spell(
+    #     level=args.level,
+    #     rang=args.range,
+    #     area=args.area,
+    #     damage_type=args.damage_type,
+    #     school=args.school,
+    #     title=args.title,
+    #     legend=args.legend,
+    #     base_fn=base_fn_mapping[args.base],
+    #     shape_fn=line_shape_fn_mapping[args.line_shape],
+    #     breakdown=args.breakdown,
+    #     output=args.output,
+    #     hide_points=args.hide_points,
+    #     hide_dotted=args.hide_dotted,
+    # )
+
     # plt.clf()
     # input_shape = np.array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1])
     # decode_shape(input_shape,k=3,point_color = 'k',color = 'k',
